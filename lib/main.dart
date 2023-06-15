@@ -38,12 +38,15 @@ class Home extends StatelessWidget {
           actions: [
             ElevatedButton(onPressed: (){
               Navigator.pop(context);
-            }, child: const Text('Exit'))
+            }, child: const Text('Exit')),
+            ElevatedButton(onPressed: (){
+              Navigator.pop(context);
+            }, child: const Text('Confirm'))
           ],
         ));
       } ,
-      child: const Icon(Icons.add),
       tooltip: 'Add_Button',
+      child: const Icon(Icons.add),
     ),);
   }
 }
