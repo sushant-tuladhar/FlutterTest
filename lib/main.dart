@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:initial_fluttere2e/page1.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -37,11 +38,13 @@ class Home extends StatelessWidget {
           content: const Text('Please click on the go back button'),
           actions: [
             ElevatedButton(onPressed: (){
-              Navigator.pop(context);
-            }, child: const Text('Exit')),
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const PageNext()));
+            }, child: const Text('Confirm')),
             ElevatedButton(onPressed: (){
               Navigator.pop(context);
-            }, child: const Text('Confirm'))
+            },
+            key:const Key('Exit'),
+            child: const Text('Exit'))
           ],
         ));
       } ,

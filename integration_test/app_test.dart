@@ -13,21 +13,12 @@ void main(){
       await tester.pumpAndSettle();
 
       // VERIFY the counter starts at 0.
-      expect(find.text('Next gen data here'), findsOneWidget);
-      expect('Sushant', 'Sushant');
+      final Finder button=find.byTooltip('Add_Button');
       
+      await tester.tap(button);
 
-      // // Finds the floating action button to tap on
-      // final Finder fab=find.byTooltip('Increment');
+      await tester.pumpAndSettle();
       
-      // // Emulate a tap on the floating action button
-      // await tester.tap(fab);
-
-      // // Trigger a frame
-      // await tester.pumpAndSettle();
-
-      // // Verify the counter increments by 1
-      // expect(find.text('2'), findsOneWidget);
     });
    });
 }
