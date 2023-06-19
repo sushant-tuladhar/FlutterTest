@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -18,7 +19,16 @@ void main(){
       await tester.tap(button);
 
       await tester.pumpAndSettle();
-      
+
+      final Finder confirmButton=find.byKey(const Key('Confirm'));
+
+      await tester.tap(confirmButton);
+      await tester.pumpAndSettle();
+
+      final Finder backButton=find.byTooltip('BackButton');
+      await tester.tap(backButton);
+
+      await tester.pumpAndSettle();
     });
    });
 }

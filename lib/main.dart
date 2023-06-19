@@ -7,7 +7,6 @@ void main() {
   ));
 }
 
-
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,8 @@ class Home extends StatelessWidget {
           actions: [
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> const PageNext()));
-            }, child: const Text('Confirm')),
+            },key: const Key('Confirm'), 
+            child: const Text('Confirm')),
             ElevatedButton(onPressed: (){
               Navigator.pop(context);
             },
@@ -50,6 +50,8 @@ class Home extends StatelessWidget {
       } ,
       tooltip: 'Add_Button',
       child: const Icon(Icons.add),
-    ),);
+    ),
+    key: const Key('Testing_key'),
+    );
   }
 }
